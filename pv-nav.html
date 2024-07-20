@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: lightgrey;
+        }
+
+        .hamburger-icon {
+            display: none;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: darkslateblue;
+        }
+
+        .logo-text {
+            color: white;
+        }
+
+        .hamburger-icon {
+            border: none;
+            background-color: transparent;
+        }
+
+        .hamburger-icon .fa-bars,
+        .hamburger-icon .fa-x {
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .hamburger-icon input[type="checkbox"] {
+            appearance: none;
+        }
+
+        .navigation {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .navigation a {
+            color: white
+        }
+
+
+        @media screen and (max-width: 750px) {
+            header {
+                display: block;
+            }
+
+            .navigation {
+                height: 0;
+                overflow: hidden;
+                flex-direction: column;
+                align-items: center;
+                transition: all 0.5s ease-in-out;
+            }
+
+            .logo {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .hamburger-icon {
+                display: block;
+            }
+
+            .fa-x {
+                display: none;
+            }
+
+            header:has(.hamburger-icon input[type="checkbox"]:checked) .navigation {
+                margin-top: 1rem;
+                height: 150px;
+            }
+
+            header:has(.hamburger-icon input[type="checkbox"]:checked) .fa-bars {
+                display: none;
+            }
+
+            header:has(.hamburger-icon input[type="checkbox"]:checked) .fa-x {
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="containernav">
+            <div class="logo">
+                <img src="Logo-min.png" alt="">
+                <button class="hamburger-icon">
+                    <label for="dropdown">
+                        <i class="fa-solid fa-bars"></i>
+                        <i class="fa-solid fa-x"></i>
+                    </label>
+                    <input type="checkbox" id="dropdown" />
+                </button>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a class="ddhome" href="#">Home<i class="fa fa-chevron-down"></i></a>
+                        <div class="dd">
+                            <ul>
+                                <li><a>All</a></li>
+                                <li> <a>Movies</a></li>
+                                <li><a>TV Shows</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a class="ddhome"
+                            href="https://www.primevideo.com/storefront/ref=atv_hom_pri_c_9zZ8D2_str?contentType=home&contentId=store">Store<i
+                                class="fa fa-chevron-down"></i></a>
+                        <div class="dd">
+                            <ul>
+                                <li><a>All</a></li>
+                                <li><a>Rent</a></li>
+                                <li><a>Channels</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a
+                            href="https://www.primevideo.com/storefront/ref=atv_hom_pri_c_9zZ8D2_live?contentType=home&contentId=live">Live
+                            Tv</a></li>
+                    <li><a href="https://www.primevideo.com/categories/ref=atv_live_hom_c_9zZ8D2_cat">Categories<i
+                                class="fa fa-chevron-down"></i></a></li>
+                </ul>
+            </div>
+            <div class="menuright">
+                <ul>
+                    <li><a href="#"><i id="ff" class="fa fa-magnifying-glass"></i></a></li>
+                    <li><a
+                            href="https://www.amazon.in/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Feu.primevideo.com%2Fauth%2Freturn%2Fref%3Dav_auth_ap%3F_t%3Dsg7fRbx5IF87QGjk6abCrCb4PtK3NAy7zYi0FLpTPOXj8AAAAAQAAAABmWBBNcmF3AAAAAPgWC9WfHH8iB-olH_E9xQ%26location%3Dhttps%3A%2F%2Fwww.primevideo.com%2Fsignup%3Fref_%253Datv_nb_signup_DVSignupOffer&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&accountStatusPolicy=P1&openid.assoc_handle=amzn_prime_video_sso_in&openid.mode=checkid_setup&siteState=260-7621097-3895119&language=en_US&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0">Subscribe
+                            now</a></li>
+                    <li><a href="#">EN<i class="fa fa-chevron-down"></i></a></li>
+                    <li><a href="#"><i id="ff" class="fa fa-circle-user"
+                                style="--fa-primary-opacity: 0.4; --fa-secondary-opacity: 0.8;"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</body>
+</html>

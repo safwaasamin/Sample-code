@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .item {
+            box-shadow: 
+                inset var(--itemWidthMinus) var(--itemWidthMinus) 0 black, 
+                inset var(--itemWidth) var(--itemWidthMinus) 0 green, 
+                inset var(--itemWidthMinus) var(--itemWidth) 0 blue, 
+                inset var(--itemWidth) var(--itemWidth) 0 yellow, 
+                0 0 20px silver;
+            transition: box-shadow ease-in-out .6s, color ease-in-out .5s;    
+            width: 100%;
+            height: 300px;
+            text-align: center;
+            background: center/cover no-repeat;
+            cursor: pointer;
+            display: grid;
+            color: white;
+            font-size: 30px; 
+        }
+        .item:hover {
+            box-shadow: 
+                inset 0 0 0 transparent, 
+                inset 0 0 0 transparent, 
+                inset 0 0 0 transparent, 
+                inset 0 0 0 transparent, 
+                0 0 20px silver;
+            color: transparent;
+        }
+        .sec {
+            --itemWidth: min(450px, 30vw);
+            --itemWidthMinus: calc(-1 * var(--itemWidth));
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
+            grid-auto-rows: minmax(300px, auto);
+            font-family: 'Averia Serif Libre';
+        }
+        .item:first-of-type {
+            background-image: url('figma.jpeg');
+        }
+        .item:nth-of-type(2) {
+            background-image: url('netflix.png');
+        }
+        .item:nth-of-type(3) {
+            background-image: url('gym.png');
+        }
+        .item:nth-of-type(4) {
+            background-image: url('flipkart.png');
+        }
+        .item > span {
+            width: auto;
+            user-select: none; 
+            -moz-user-select: none; 
+            -webkit-user-select: none;
+        }
+        body * {
+            place-self: center;
+        }
+        body {
+            display: grid;
+            height: 100vw;
+            margin: 0;
+            /* place-self: center; */
+        }
+        .item a {
+            text-decoration: none;
+            color: white;
+        }
+        @media (max-width: 600px) {
+            .item {
+                font-size: 20px;
+                height: 200px;
+                width: auto !important;
+            }
+        }
+        @media (max-width: 400px) {
+            .item {
+                font-size: 15px;
+                height: 150px;
+                width: fit-content !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="portfolio" class="full-height">
+        <div class="container">
+            <div class="intro">
+                <h6 class="heading-3 text-brands" data-aos="fade-up">LATEST PROJECTS AND DESIGNS</h6>
+                <h2 class="heading-2" data-aos="fade-up" data-aos-delay="100">MY PORTFOLIO</h2>
+            </div>
+        </div>
+    </section>
+    <div class="sec" id="seco">
+        <div class="item"><a target="_blank" href="https://aspiraproject.netlify.app/"><span>Portfolio Website</span></a></div>
+        <div class="item"><a target="_blank" href="https://project2siqua.netlify.app/"><span>Netflix Clone</span></a></div>
+        <div class="item"><a target="_blank" href="https://gymwebsitehtmlcss.netlify.app/"><span>Gym Website</span></a></div>
+        <div class="item"><a target="_blank" href="https://project4siqua.netlify.app/"><span>Flipkart Clone</span></a></div>
+    </div>
+</body>
+</html>
